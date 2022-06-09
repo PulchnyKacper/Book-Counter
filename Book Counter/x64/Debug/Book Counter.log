@@ -1,0 +1,5 @@
+﻿  Book Counter.cpp
+D:\Studia\Sem 6\WM\Book Counter\Book Counter\Book Counter.cpp(38,21): warning C4244: '=': conversion from 'double' to 'char', possible loss of data
+D:\Studia\Sem 6\WM\Book Counter\Book Counter\Book Counter.cpp(42,22): warning C4244: '=': conversion from 'double' to 'char', possible loss of data
+D:\Studia\Sem 6\WM\Book Counter\Book Counter\Book Counter.cpp(202,34): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Book Counter.vcxproj -> D:\Studia\Sem 6\WM\Book Counter\x64\Debug\Book Counter.exe
