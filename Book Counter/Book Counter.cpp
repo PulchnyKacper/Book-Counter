@@ -66,25 +66,25 @@ void counter(cv::Mat image) {
 
 	cv::Mat gray, blur, edge, eroded, dilated;
 	cv::cvtColor(image, gray, cv::COLOR_BGR2GRAY);
-	//cv::imshow("okienko", gray);
-	//cv::waitKey(0);
+	cv::imshow("okienko", gray);
+	cv::waitKey(0);
 
 	cv::GaussianBlur(gray, blur, cv::Size(size_Gaus, size_Gaus), blur_power);
-	//cv::imshow("okienko", blur);
-	//cv::waitKey(0);
+	cv::imshow("okienko", blur);
+	cv::waitKey(0);
 
 	cv::Canny(blur, edge, low_Tresh, max_Tresh);
 	cv::convertScaleAbs(edge, edge);
-	//cv::imshow("okienko", edge);
-	//cv::waitKey(0);
+	cv::imshow("okienko", edge);
+	cv::waitKey(0);
 
 	erode(edge, eroded, kernel_erode, cv::Point(-1, -1), numer_of_erosions);
-	//cv::imshow("okienko", eroded);
-	//cv::waitKey(0);
+	cv::imshow("okienko", eroded);
+	cv::waitKey(0);
 
 	dilate(eroded, dilated, kernel_dilate, cv::Point(-1, -1), numer_of_dilatations);
-	//cv::imshow("okienko", dilated);
-	//cv::waitKey(0);
+	cv::imshow("okienko", dilated);
+	cv::waitKey(0);
 	/*
 	std::vector<cv::Vec2f> lines;
 	HoughLines(dilated, lines, 2, CV_PI / 180, 200, 0, 0);
@@ -112,7 +112,7 @@ void counter(cv::Mat image) {
 	std::vector<cv::Vec4i> linesP;
 	std::vector<cv::Vec4i> linesP_Useful;
 	std::vector<cv::Vec4i> linesP_Even_More_Useful;
-	std::vector<cv::Vec4i> linesP_Final_UwU;
+	std::vector<cv::Vec4i> linesP_Final;
 	HoughLinesP(dilated, linesP, 1, CV_PI / 180, 100, 100, 60);
 	for (size_t i = 0; i < linesP.size(); i++)
 	{
@@ -162,13 +162,13 @@ void counter(cv::Mat image) {
 		cv::Vec4i l = linesP_Even_More_Useful[i - 1];
 		if (l[1] > 150) {
 
-			linesP_Final_UwU.push_back(l);
+			linesP_Final.push_back(l);
 		}
 
 	}
-	for (size_t i = 0; i < linesP_Final_UwU.size(); i++)
+	for (size_t i = 0; i < linesP_Final.size(); i++)
 	{
-		cv::Vec4i l = linesP_Final_UwU[i];
+		cv::Vec4i l = linesP_Final[i];
 		line(image, cv::Point(l[0], l[1]), cv::Point(l[2], l[3]), cv::Scalar(255, 0, 0), 3, cv::LINE_AA);
 		number_of_books++;
 	}
