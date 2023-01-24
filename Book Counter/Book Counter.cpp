@@ -10,7 +10,7 @@
 
 char choice = 0;
 int number_of_pictures = 0;
-
+int dupa;
 double safe_Input()
 {
 	int input;
@@ -27,17 +27,17 @@ double safe_Input()
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			std::cout << "Enter the correct number, it's not too difficult \n ";
 		}
-	} 
+	}
 
 	return (input);
 }
 void Interface() {
-	std::cout << "What would you prefer: \n"; 
+	std::cout << "What would you prefer: \n";
 	std::cout << "(1) Input a file name (file must be present in Images_of_books file) \n";
 	std::cout << "(2) Enter the number of images to be processed (images must be present in Images_of_books file and they must be named with consecutive numbers starting with 1)\n";
 	choice = safe_Input();
 	while (choice != 1 && choice != 2){
-		
+
 		std::cout << "Enter the correct number, it's not too difficult \n ";
 		choice = safe_Input();
 	}
